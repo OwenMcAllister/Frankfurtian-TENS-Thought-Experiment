@@ -99,8 +99,10 @@ export function TwoButtonsExperiment() {
 				{completed && (
 					<p className="text-white text-lg md:text-2xl text-center max-w-xl fade-in mt-6">
 						You selected the button the system had already chosen:{" "}
-						Was this a free choice? You couldn't have done otherwise...
-						<span className="font-bold uppercase">{chosenSide}</span>.
+                        <span className="font-bold uppercase">{chosenSide}</span>.
+						
+                        Did this seem like a free choice? You couldn't have done otherwise...
+						
 					</p>
 				)}
 
