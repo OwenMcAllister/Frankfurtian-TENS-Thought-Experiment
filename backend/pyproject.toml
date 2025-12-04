@@ -6,10 +6,12 @@ authors = ["Owen McAllister <owencmcallister@gmail.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.12"
+python = "^3.11"
 pydantic = "^2.12.5"
 fastapi = "^0.123.5"
 uvicorn = "^0.38.0"
+screeninfo = "^0.8.1"
+pynput = "^1.8.1"
 
 
 [build-system]

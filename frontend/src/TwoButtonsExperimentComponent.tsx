@@ -31,19 +31,11 @@ export function TwoButtonsExperiment() {
 			const dy = Math.max(rect.top - e.clientY, 0, e.clientY - rect.bottom);
 			const distance = Math.hypot(dx, dy);
 
-			const THRESHOLD_PX = 80;
+			const THRESHOLD_PX = 10;
 
 			if (distance < THRESHOLD_PX) {
-				setIntervened(true);
 
-				fetch("http://localhost:8000/intervention", {
-					method: "POST",
-					headers: { "Content-Type": "application/json" },
-					body: JSON.stringify({
-						attempted: forbiddenSide,
-						chosen: chosenSide,
-					}),
-				});
+				fetch("http://localhost:8000/intervention");
 			}
 		};
 
@@ -60,10 +52,8 @@ export function TwoButtonsExperiment() {
 		setCompleted(true);
 	};
 
-	const disableLeft =
-		(intervened || completed) && chosenSide === "right";
-	const disableRight =
-		(intervened || completed) && chosenSide === "left";
+	const disableLeft = (intervened || completed) && chosenSide === "right";
+	const disableRight = (intervened || completed) && chosenSide === "left";
 
 	return (
 		<div className="w-full h-full flex items-center justify-center">
@@ -103,14 +93,6 @@ export function TwoButtonsExperiment() {
 						
                         Did this seem like a free choice? You couldn't have done otherwise...
 						
-					</p>
-				)}
-
-				{!completed && intervened && (
-					<p className="text-white text-lg md:text-2xl text-center max-w-xl fade-in mt-6">
-						Behind the scenes, the system had already decided you would pick{" "}
-						<span className="font-bold uppercase">{chosenSide}</span>. What does
-						this mean for the Principle of Alternate Possibilities?
 					</p>
 				)}
 			</div>
