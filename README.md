@@ -31,7 +31,8 @@ TENS units are medical devices that deliver a low voltage electrical current to 
 See a fun example by Michael Reeves here!
 > https://youtu.be/fzJrH_DR6SY?t=56
 
-This project runs on a Raspberry Pi, and presents users with a choice: Click the button on the left, or click the button on the right. At runtime, the program will randomly select either the left or the right button. If the user selects the same button as the program, nothing happens.
-Otherwise, the program engages a TENS unit, with electrodes placed strategically on the user's arm to prevent the user from clicking the button!
+This project runs locally on a laptop and arduino, and presents users with a choice: Click the button on the left, or click the button on the right. At runtime, the program will randomly select either the left or the right button. If the user selects the same button as the program, nothing happens.
+Otherwise, the arduino engages a TENS unit, with electrodes placed strategically on the user's arm to prevent the user from clicking the button!
 
-** Disclaimer: Do not try this at home! **
+** Disclaimer: Do not try this at home! Shocking yourself intentionally with a TENS unit turned to the max can be dangerous.**
+
