@@ -9,7 +9,7 @@ const INTRO_TEXT = [
     "Assume that under normal conditions, your choices are made freely..."
 ];
 
-const TEXT_DURATION_MS = 5000
+const TEXT_DURATION_MS = 7500
 
 export function IntroTextSequence() {
     const[index, setIndex] = useState(0);

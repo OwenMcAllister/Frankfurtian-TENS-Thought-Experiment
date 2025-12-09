@@ -6,14 +6,13 @@ from fastapi import FastAPI
 
 # internal
 from src.routes import setup_routes
-
-def setup_modules(app: FastAPI):
-    setup_routes(app)
+from src.ArduinoControllerClass import ArduinoController 
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     print("Starting up")
-    setup_modules(app)
+    app.state.arduino_controller = ArduinoController(baud_rate=9600)
+    setup_routes(app)
     yield
     print("Shutting down")
 

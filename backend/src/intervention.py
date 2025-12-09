@@ -12,9 +12,7 @@ async def getScreenCenter():
             height = int(m.height)
             return [width // 2, height // 2]
 
-
-async def intervene() -> None:
+async def intervene(controller) -> None:
     center = await getScreenCenter()
     mouse.position = (center[0], center[1])
-
-    # Engage TENS
+    controller.send_msg("INTERVENE")

@@ -1,1 +1,0 @@
-# Start project in Chrome Application mode
